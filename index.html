@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>郑佳毅 - 简历</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --text: #1f2430;
+        --muted: #4f596d;
+        --muted-2: #6b7280;
+        --blue: #2b4b8c;
+        --blue-2: #365ea1;
+        --panel: #e8eef9;
+        --white: #ffffff;
+        --bar-bg: #d6def0;
+        --bar-shadow: rgba(24, 39, 75, 0.18);
+        --hairline: rgba(47, 63, 95, 0.16);
+        --page-bg: #ffffff;
+        --page-border: rgba(43, 75, 140, 0.12);
+        --shadow-lg: 0 16px 50px rgba(24, 39, 75, 0.15);
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Noto Sans CJK SC", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        color: var(--blue-2);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(43, 75, 140, 0.3);
+        transition: border-bottom-color 140ms ease, opacity 140ms ease;
+      }
+
+      a:hover {
+        border-bottom-color: rgba(43, 75, 140, 0.55);
+        opacity: 0.98;
+      }
+
+      .page {
+        width: min(100%, 1120px);
+        padding: clamp(18px, 4vw, 74px) clamp(14px, 3vw, 60px)
+          clamp(20px, 4vw, 60px);
+        margin: clamp(10px, 2vw, 26px) auto;
+        box-sizing: border-box;
+        background: var(--page-bg);
+        border: 1px solid var(--page-border);
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 22px;
+        align-items: center;
+      }
+
+      .name {
+        font-size: clamp(42px, 4.2vw, 60px);
+        line-height: 1.05;
+        font-weight: 900;
+        letter-spacing: 1px;
+        color: var(--blue);
+        margin: 0 0 14px;
+      }
+
+      .banner {
+        background: var(--panel);
+        padding: 16px 18px;
+        clip-path: polygon(0 0, 93.5% 0, 100% 50%, 93.5% 100%, 0 100%);
+        border-radius: 2px;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .banner .topline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        color: rgba(31, 36, 48, 0.88);
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
+
+      .banner .grid {
+        display: grid;
+        grid-template-columns: 120px 1fr 1fr;
+        gap: 10px 18px;
+        align-items: center;
+        color: rgba(31, 36, 48, 0.95);
+        font-size: 16px;
+        font-weight: 650;
+        letter-spacing: 0.2px;
+      }
+
+      .banner .grid .year {
+        font-size: 18px;
+        opacity: 0.98;
+      }
+
+      .photo {
+        width: 150px;
+        height: 190px;
+        object-fit: cover;
+        object-position: center center;
+        background: rgba(43, 75, 140, 0.05);
+        border: 4px solid rgba(43, 75, 140, 0.12);
+        border-radius: 12px;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+        justify-self: center;
+        align-self: center;
+        display: block;
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .section-head {
+        position: relative;
+        display: grid;
+        grid-template-columns: 52px auto 1fr;
+        gap: 16px;
+        align-items: center;
+        padding: 16px 0 6px;
+        border-top: 1px solid rgba(47, 63, 95, 0.12);
+      }
+
+      .section-head::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 6px;
+        width: 86px;
+        height: 86px;
+        background: radial-gradient(110% 110% at 28% 32%, rgba(91, 111, 144, 0.35), transparent 64%);
+        opacity: 0.55;
+        pointer-events: none;
+        filter: blur(0.2px);
+      }
+
+      .icon-box {
+        width: 52px;
+        height: 52px;
+        border-radius: 2px;
+        background: var(--white);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+      }
+
+      .icon-box svg {
+        width: 32px;
+        height: 32px;
+        fill: var(--blue-2);
+        opacity: 0.95;
+      }
+
+      .section-title {
+        font-size: clamp(26px, 2.4vw, 34px);
+        font-weight: 900;
+        color: var(--blue);
+        letter-spacing: 1px;
+        white-space: nowrap;
+      }
+
+      .bar {
+        height: 12px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--blue-2) 0 13%, var(--bar-bg) 13% 100%);
+        box-shadow: 0 8px 18px var(--bar-shadow);
+      }
+
+      .content {
+        margin-left: 70px;
+        color: var(--muted);
+        font-size: 15.5px;
+        line-height: 1.85;
+      }
+
+      .content p {
+        margin: 10px 0 0;
+      }
+
+      .content ul {
+        margin: 10px 0 0;
+        padding-left: 20px;
+      }
+
+      .content li {
+        margin: 6px 0;
+      }
+
+      .item-title {
+        color: var(--blue);
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+
+      .meta {
+        color: var(--muted-2);
+        font-size: 13.5px;
+        margin-top: 4px;
+      }
+
+      .hr {
+        height: 1px;
+        background: var(--hairline);
+        margin: 14px 0 0;
+      }
+
+      @media (max-width: 980px) {
+        .page {
+          width: 100%;
+          padding: 18px 14px 28px;
+          margin: 0 auto;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0;
+          box-shadow: none;
+        }
+        .header {
+          grid-template-columns: 1fr;
+        }
+        .photo {
+          width: 140px;
+          height: 180px;
+          justify-self: center;
+        }
+        .banner .grid {
+          grid-template-columns: 110px 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a {
+          transition: none;
+        }
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background: var(--bg);
+        }
+        .page {
+          width: 210mm;
+          padding: 18mm 16mm 16mm;
+          margin: 0 auto;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          backdrop-filter: none;
+        }
+        a {
+          border-bottom: none;
+        }
+        details {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div>
+          <h1 class="name">郑佳毅</h1>
+
+          <div class="banner" aria-label="基本信息与教育背景">
+            <div class="topline">
+              <div>
+                电话：18902029558&nbsp;&nbsp;邮箱：<a href="mailto:jzheng688@connect.hkust-gz.edu.cn">jzheng688@connect.hkust-gz.edu.cn</a>
+              </div>
+            </div>
+
+            <div class="grid">
+              <div class="year">2020-2024</div>
+              <div>本科：安徽大学</div>
+              <div>专业：互联网金融　经济学学位</div>
+
+              <div class="year">2025－至今</div>
+              <div>硕士：香港科技大学（广州）</div>
+              <div>专业：大数据智能　计算机学位</div>
+            </div>
+          </div>
+        </div>
+
+        <img class="photo" src="photo.png" alt="证件照（来自 zhengjiayi.pdf）" />
+      </header>
+
+      <section class="section" aria-label="相关技能">
+        <div class="section-head">
+          <div class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v7A2.5 2.5 0 0 1 17.5 15h-4l1 2h2.25a.75.75 0 1 1 0 1.5H7.25a.75.75 0 1 1 0-1.5H9.5l1-2h-4A2.5 2.5 0 0 1 4 12.5v-7Zm2.5-.5a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-11Z"
+              />
+            </svg>
+          </div>
+          <div class="section-title">相关技能</div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="content">
+          <ul>
+            <li>算法知识：机器学习、深度学习、模型微调、强化学习、基本模型架构。</li>
+            <li>算法技能：大语言模型微调、强化学习、对齐、部署；小模型 BERT 微调应用开发、RAG 开发。</li>
+            <li>数据处理技能：SFT、无监督/弱监督训练、Cleanlab、Spark、SQL、Pandas、NumPy、PyTorch。</li>
+            <li>基础计算机技能：docker，熟练掌握Linux操作命令，api接口开发。</li>
+            <li>编程语言：主要使用Python，工作中用过Kotlin、Java，使用过typescript, javascript, css, html, go。</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <p class="item-title">核心能力（补充）</p>
+          <ul>
+            <li>端到端 AI 工程：从数据清洗/筛选 → 训练/微调 → 推理服务化 → 实验复现与汇报材料沉淀。</li>
+            <li>大模型与多模态：参数高效微调（QLoRA/LoRA）、多模态对话（图像输入）、对齐方法探索（GRPO）。</li>
+            <li>算法落地与系统化实验：推荐系统（相似度/冷启动/隐式反馈）、图神经网络训练与可视化、强化学习（Double DQN）。</li>
+            <li>工程实现：FastAPI 服务、GPU/MPS/CUDA 加速推理与训练脚本化、接口调用与音频流处理。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">技术栈（在本目录中体现）</p>
+          <ul>
+            <li>语言与框架：Python、PyTorch、FastAPI、Pydantic</li>
+            <li>大模型生态：Transformers、PEFT/LoRA、BitsAndBytes（8bit/4bit 量化）、Trainer/训练脚本化</li>
+            <li>方向覆盖：多模态对话、LLM 微调/对齐、推荐系统、GNN、强化学习、ASR/TTS、文本分类与数据质量</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-label="项目经历">
+        <div class="section-head">
+          <div class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7 2.75A2.25 2.25 0 0 1 9.25.5h5.5A2.25 2.25 0 0 1 17 2.75V5h3.25A2.25 2.25 0 0 1 22.5 7.25v12.5A2.25 2.25 0 0 1 20.25 22H3.75A2.25 2.25 0 0 1 1.5 19.75V7.25A2.25 2.25 0 0 1 3.75 5H7V2.75ZM8.5 5h7V2.75a.75.75 0 0 0-.75-.75h-5.5a.75.75 0 0 0-.75.75V5Zm-4.75 1.5a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h16.5a.75.75 0 0 0 .75-.75V7.25a.75.75 0 0 0-.75-.75H3.75Z"
+              />
+            </svg>
+          </div>
+          <div class="section-title">项目经历</div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="content">
+          <p class="item-title">Reinforcement Learning（Python, PyTorch, HuggingFace TRL）</p>
+          <ul>
+            <li>使用HuggingFace TRL的GRPO算法对大语言模型进行强化学习后训练，增强数学推理能力。</li>
+            <li>构建思维链 System Prompt，采用 &lt;think&gt;/&lt;answer&gt; 结构引导模型输出清晰推理过程。</li>
+            <li>完成从题目预处理、prompt 生成、tokenization 到 dataset 构建的训练数据流水线。</li>
+            <li>配置并运行 GRPO 训练（policy、reference、reward 模型），提升模型推理表现。</li>
+            <li>在测试集上评估模型效果，验证 reasoning 输出精度和格式一致性。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">大模型领域微调项目（LoRA / QLoRA + Transformers）</p>
+          <ul>
+            <li>使用 HuggingFace Transformers 和 LoRA/QLoRA 搭建大模型的监督微调流程，实现模型的轻量化领域适配。</li>
+            <li>处理并整理原始语料，构造成标准的 instruction–response 格式，并完成 tokenizer 和数据管道搭建。</li>
+            <li>配置并执行微调，包括学习率、混合精度、梯度累积等训练优化策略，显著降低训练显存占用。</li>
+            <li>完成模型训练、验证与权重导出，得到在领域问答和文本生成任务上表现更稳定的微调模型。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">金融文本情感分类（FinBERT 微调）</p>
+          <ul>
+            <li>基于 Kaggle「Financial PhraseBank」搭建金融新闻情感分类任务，完成数据清洗、标注分析与关键词统计。</li>
+            <li>对比多种模型（Naive Bayes+TF-IDF、LSTM、原始 FinBERT），最终选择以 FinBERT 为基础进行微调。</li>
+            <li>使用 HuggingFaceTransformers 对 FinBERT 进行监督微调，优化学习率、batchsize、epoch 等训练参数。</li>
+            <li>微调模型在测试集取得 0.88 准确率，显著优于未微调版本。</li>
+            <li>在外部金融文本数据上达到 0.76 准确率（原模型 0.69），表现出更强的泛化能力。</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <p class="item-title">DeepSeek-VL2 多模态对话 API（`deepseek-vl_build_example1029/`）</p>
+          <ul>
+            <li>将视觉语言模型封装为可调用的 FastAPI 服务，支持多轮对话与本地图片路径输入；提供健康检查与输入校验，推理侧包含显存清理与资源回收逻辑。</li>
+            <li class="meta">关键词：FastAPI、Pydantic、Transformers/DeepSeek-VL2、CUDA 推理、服务化与工程健壮性。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">Qwen3-14B 法律咨询领域微调（`law_train.py`）</p>
+          <ul>
+            <li>搭建 QLoRA 微调训练流程：4-bit 量化加载（BitsAndBytes）、LoRA 注入、SFT 数据构造与过滤、训练/验证划分、Trainer 训练与检查点保存。</li>
+            <li class="meta">关键词：PyTorch、Transformers、PEFT/LoRA、BitsAndBytes（4-bit NF4）、梯度累积、评估与复现实验。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">LLM 对齐与微调实验（`GRPO_LLM_Fine_Tuning.ipynb`、`llm-emotion-helper_fine-tuning.ipynb`、`t5.ipynb`）</p>
+          <ul>
+            <li>进行对齐方法（GRPO）与指令微调任务探索，沉淀可复现的 notebook 实验链路与结果记录。</li>
+            <li class="meta">关键词：对齐/奖励优化思路、SFT、实验设计与迭代。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">推荐系统体系化实验（`Recommender_System/`）</p>
+          <ul>
+            <li>覆盖 Item-Item 协同过滤、冷启动问题处理、隐式反馈推荐三条主线；配套数据与结果展示材料，形成从原理到实验的完整闭环。</li>
+            <li class="meta">关键词：相似度建模、冷启动策略、隐式反馈、可解释分析与展示。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">图神经网络实践（`GNNs/`）</p>
+          <ul>
+            <li>进行 GNN 训练实验与可视化，包含数据准备、训练流程、模型保存与结果展示。</li>
+            <li class="meta">关键词：图表示学习、训练管线、实验管理与可视化。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">强化学习 Double DQN：Flappy Bird（`reinforcement_learning_bird/torch_DDQL.py`）</p>
+          <ul>
+            <li>基于 PyTorch 实现 Double DQN 训练主循环，包含经验回放、目标网络同步、ε-greedy 探索与图像预处理；支持 CUDA/MPS/CPU 设备自适应。</li>
+            <li class="meta">关键词：Deep RL、Replay Buffer、Target Network、训练稳定性与工程实现。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">语音与多模态接口链路（`qwen-asr-tts-realtime.py`、`test_api/test_asr_flash.py`）</p>
+          <ul>
+            <li>实现 TTS 流式音频播放与 ASR 调用示例，完成从接口请求到音频解码/播放的闭环验证。</li>
+            <li class="meta">关键词：DashScope/Qwen、流式响应、音频处理、端到端联调。</li>
+          </ul>
+
+          <p class="item-title" style="margin-top: 14px">数据质量与错误分析（`Label Errors/` + 相关 notebook）</p>
+          <ul>
+            <li>对结构化数据进行标签错误分析与质量排查，并在多标注者与数据筛选主题上做方法探索（熵筛选/数据集扩充等）。</li>
+            <li class="meta">关键词：数据质量、错误分析、数据筛选与整理。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-label="工作经历">
+        <div class="section-head">
+          <div class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M8.25 3A2.25 2.25 0 0 1 10.5.75h3A2.25 2.25 0 0 1 15.75 3v1.5h4.5A2.25 2.25 0 0 1 22.5 6.75v12A2.25 2.25 0 0 1 20.25 21H3.75A2.25 2.25 0 0 1 1.5 18.75v-12A2.25 2.25 0 0 1 3.75 4.5h4.5V3Zm1.5 1.5h4.5V3a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75v1.5ZM3.75 6a.75.75 0 0 0-.75.75v12c0 .414.336.75.75.75h16.5a.75.75 0 0 0 .75-.75v-12a.75.75 0 0 0-.75-.75H3.75Z"
+              />
+            </svg>
+          </div>
+          <div class="section-title">工作经历</div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="content">
+          <p class="item-title">人工智能产品线</p>
+          <p class="meta">2025.03-2025.08　合肥非度技术有限公司</p>
+          <ul>
+            <li>使用 vllm、ollama 框架部署开源文本模型（Deepseek 32B、Qwen 7B）、多模态模型（Qwen2.5-VL 3B/7B）、embedding 模型（BGE-embedding）。</li>
+            <li>基于 RAG 检索对数据库产品进行语义相似度检测，并用相似产品预测价格。</li>
+            <li>针对客户需求，本地部署不同模型、进行 prompt 设计与接口开发。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-label="自我评价">
+        <div class="section-head">
+          <div class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M15.8 2.2a2.25 2.25 0 0 1 3.182 0l2.818 2.818a2.25 2.25 0 0 1 0 3.182l-9.96 9.96a2.25 2.25 0 0 1-1.18.62l-4.7.94a1.25 1.25 0 0 1-1.47-1.47l.94-4.7a2.25 2.25 0 0 1 .62-1.18l9.92-9.97Zm2.122 1.06a.75.75 0 0 0-1.06 0l-1.14 1.14 3.88 3.88 1.14-1.14a.75.75 0 0 0 0-1.06l-2.82-2.82ZM14.66 5.46l-8.85 8.85a.75.75 0 0 0-.207.392l-.77 3.85 3.85-.77a.75.75 0 0 0 .392-.207l8.85-8.85-3.265-3.265Z"
+              />
+            </svg>
+          </div>
+          <div class="section-title">自我评价</div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="content">
+          <ul>
+            <li>兴趣爱好：关注前沿计算体系结构，研读新型网络架构，探索未来计算技术的创新应用方向。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-label="附录：原文">
+        <div class="content">
+          <details>
+            <summary class="item-title">附录：原文（用于确保内容完整）</summary>
+            <p class="meta">下面两段为 `zhengjiayi.pdf` 与 `RESUME.md` 的原始文本，便于核对与二次编辑。</p>
+            <p class="item-title">zhengjiayi.pdf 原文</p>
+            <pre style="white-space: pre-wrap; color: var(--muted); line-height: 1.7; margin: 10px 0 0">
+郑佳毅
+电话：18902029558 邮箱：jzheng688@connect.hkust-gz.edu.cn
+2020-2024 本科：安徽大学 专业：互联网金融 经济学学位
+2025－至今 硕士：香港科技大学（广州） 专业：大数据智能 计算机学位
+相关技能
+• 算法知识：机器学习、深度学习、模型微调、强化学习、基本模型架构。
+• 算法技能：大语言模型微调、强化学习、对齐、部署；小模型 BERT 微调应用开发、RAG 开发。
+•数据处理技能：SFT、无监督/弱监督训练、Cleanlab、Spark、SQL、Pandas、NumPy、PyTorch。
+•基础计算机技能：docker，熟练掌握Linux操作命令，api接口开发。
+•编程语言：主要使用Python，工作中用过Kotlin、Java，使用过typescript, javascript, css, html, go。
+项目经历
+Reinforcement Learning(Python, PyTorch, HuggingFace TRL)
+•使用HuggingFace TRL的GRPO算法对大语言模型进行强化学习后训练，增强数学推理能力。
+•构建思维链 System Prompt，采用 <think>/<answer> 结构引导模型输出清晰推理过程。
+•完成从题目预处理、prompt 生成、tokenization 到 dataset 构建的训练数据流水线。
+•配置并运行 GRPO 训练（policy、reference、reward 模型），提升模型推理表现。
+• 在测试集上评估模型效果，验证 reasoning 输出精度和格式一致性。
+大模型领域微调项目（LoRA / QLoRA + Transformers）
+•使用 HuggingFace Transformers 和 LoRA/QLoRA 搭建大模型的监督微调流程，实现模型的轻量化领域适配。
+•处理并整理原始语料，构造成标准的 instruction–response 格式，并完成 tokenizer 和数据管道搭建。
+•配置并执行微调，包括学习率、混合精度、梯度累积等训练优化策略，显著降低训练显存占用。
+•完成模型训练、验证与权重导出，得到在领域问答和文本生成任务上表现更稳定的微调模型。
+金融文本情感分类（FinBERT 微调）
+•基于 Kaggle「Financial PhraseBank」搭建金融新闻情感分类任务，完成数据清洗、标注分析与关键词统计。
+•对比多种模型（Naive Bayes+TF-IDF、LSTM、原始 FinBERT），最终选择以 FinBERT 为基础进行微调。
+•使用 HuggingFaceTransformers 对 FinBERT 进行监督微调，优化学习率、batchsize、epoch 等训练参数。
+•微调模型在测试集取得 0.88 准确率，显著优于未微调版本。
+•在外部金融文本数据上达到 0.76 准确率（原模型 0.69），表现出更强的泛化能力。
+工作经历
+人工智能产品线
+2025.03-2025.08 合肥非度技术有限公司
+• 使用 vllm，ollama框架部署开源文本模型（Deepseek 32b, Qwen 7B），多模型模型(Qwen2.5-VL 3B/7B),
+embedding模型（BGE-embedding）。
+• 基于RAG检索对数据库产品进行语义相似度检测，基于相似产品来预测价格。
+• 针对客户需求，本地部署不同模型、prompt开发、 开发接口调用。
+自我评价
+• 兴趣爱好：关注前沿计算体系结构，研读新型网络架构，探索未来计算技术的创新应用方向。
+            </pre>
+
+            <p class="item-title" style="margin-top: 14px">RESUME.md 原文</p>
+            <pre style="white-space: pre-wrap; color: var(--muted); line-height: 1.7; margin: 10px 0 0">
+# 郑佳毅 — 项目型简历（能力导向）
+
+## 核心能力
+- 端到端 AI 工程：从数据清洗/筛选 → 训练/微调 → 推理服务化 → 实验复现与汇报材料沉淀。
+- 大模型与多模态：参数高效微调（QLoRA/LoRA）、多模态对话（图像输入）、对齐方法探索（GRPO）。
+- 算法落地与系统化实验：推荐系统（相似度/冷启动/隐式反馈）、图神经网络训练与可视化、强化学习（Double DQN）。
+- 工程实现：FastAPI 服务、GPU/MPS/CUDA 加速推理与训练脚本化、接口调用与音频流处理。
+
+## 代表项目（基于本目录产出）
+- DeepSeek-VL2 多模态对话 API（`deepseek-vl_build_example1029/`）
+  - 将视觉语言模型封装为可调用的 FastAPI 服务，支持多轮对话与本地图片路径输入；提供健康检查与输入校验，推理侧包含显存清理与资源回收逻辑。
+  - 关键词：FastAPI、Pydantic、Transformers/DeepSeek-VL2、CUDA 推理、服务化与工程健壮性。
+
+- Qwen3-14B 法律咨询领域微调（`law_train.py`）
+  - 搭建 QLoRA 微调训练流程：4-bit 量化加载（BitsAndBytes）、LoRA 注入、SFT 数据构造与过滤、训练/验证划分、Trainer 训练与检查点保存。
+  - 关键词：PyTorch、Transformers、PEFT/LoRA、BitsAndBytes（4-bit NF4）、梯度累积、评估与复现实验。
+
+- LLM 对齐与微调实验（`GRPO_LLM_Fine_Tuning.ipynb`、`llm-emotion-helper_fine-tuning.ipynb`、`t5.ipynb`）
+  - 进行对齐方法（GRPO）与指令微调任务探索，沉淀可复现的 notebook 实验链路与结果记录。
+  - 关键词：对齐/奖励优化思路、SFT、实验设计与迭代。
+
+- 推荐系统体系化实验（`Recommender_System/`）
+  - 覆盖 Item-Item 协同过滤、冷启动问题处理、隐式反馈推荐三条主线；配套数据与结果展示材料，形成从原理到实验的完整闭环。
+  - 关键词：相似度建模、冷启动策略、隐式反馈、可解释分析与展示。
+
+- 图神经网络实践（`GNNs/`）
+  - 进行 GNN 训练实验与可视化，包含数据准备、训练流程、模型保存与结果展示。
+  - 关键词：图表示学习、训练管线、实验管理与可视化。
+
+- 强化学习 Double DQN：Flappy Bird（`reinforcement_learning_bird/torch_DDQL.py`）
+  - 基于 PyTorch 实现 Double DQN 训练主循环，包含经验回放、目标网络同步、ε-greedy 探索与图像预处理；支持 CUDA/MPS/CPU 设备自适应。
+  - 关键词：Deep RL、Replay Buffer、Target Network、训练稳定性与工程实现。
+
+- 语音与多模态接口链路（`qwen-asr-tts-realtime.py`、`test_api/test_asr_flash.py`）
+  - 实现 TTS 流式音频播放与 ASR 调用示例，完成从接口请求到音频解码/播放的闭环验证。
+  - 关键词：DashScope/Qwen、流式响应、音频处理、端到端联调。
+
+- 数据质量与错误分析（`Label Errors/` + 相关 notebook）
+  - 对结构化数据进行标签错误分析与质量排查，并在多标注者与数据筛选主题上做方法探索（熵筛选/数据集扩充等）。
+  - 关键词：数据质量、错误分析、数据筛选与整理。
+
+## 技术栈（在本目录中体现）
+- 语言与框架：Python、PyTorch、FastAPI、Pydantic
+- 大模型生态：Transformers、PEFT/LoRA、BitsAndBytes（8bit/4bit 量化）、Trainer/训练脚本化
+- 方向覆盖：多模态对话、LLM 微调/对齐、推荐系统、GNN、强化学习、ASR/TTS、文本分类与数据质量
+            </pre>
+          </details>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
